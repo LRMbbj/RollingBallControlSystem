@@ -1,1 +1,6 @@
-﻿
+﻿  pid.c
+  Linking VisualGDB/Debug/RollingBallControlSystem...
+  ------------------- Memory utilization report -------------------
+  Used FLASH: 26KB out of 1024KB (2%)
+  Used SRAM: 1164 bytes out of 128KB (0%)
+  Used CCMRAM: 0 bytes out of 64KB (0%)

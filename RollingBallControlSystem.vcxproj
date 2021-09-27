@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
-      <AdditionalIncludeDirectories>Inc;Drivers\CMSIS\Include;Drivers\CMSIS\Device\ST\STM32F4xx\Include;Drivers\STM32F4xx_HAL_Driver\Inc;Drivers\STM32F4xx_HAL_Driver\Inc\Legacy;Hardware;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Hardware;Inc;Drivers\CMSIS\Include;Drivers\CMSIS\Device\ST\STM32F4xx\Include;Drivers\STM32F4xx_HAL_Driver\Inc;Drivers\STM32F4xx_HAL_Driver\Inc\Legacy;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>DEBUG=1;flash_layout;STM32F407xx;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CLanguageStandard />
@@ -79,6 +79,7 @@
     <ClCompile Include="Hardware\host.c" />
     <ClCompile Include="Hardware\pid.c" />
     <ClCompile Include="Hardware\servo.c" />
+    <ClCompile Include="Src\dma.c" />
     <ClCompile Include="Src\gpio.c" />
     <ClCompile Include="Src\tim.c" />
     <ClCompile Include="Src\usart.c" />
@@ -108,6 +109,7 @@
     <ClInclude Include="Hardware\host.h" />
     <ClInclude Include="Hardware\pid.h" />
     <ClInclude Include="Hardware\servo.h" />
+    <ClInclude Include="Inc\dma.h" />
     <ClInclude Include="Inc\gpio.h" />
     <ClInclude Include="Inc\tim.h" />
     <ClInclude Include="Inc\usart.h" />

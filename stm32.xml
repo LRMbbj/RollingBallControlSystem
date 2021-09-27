@@ -48,7 +48,7 @@
     <AllDependencies>
       <ProjectDependency>
         <RelativePath>RollingBallControlSystem.gpdsc</RelativePath>
-        <Timestamp>132720039648690263</Timestamp>
+        <Timestamp>132723718272385162</Timestamp>
       </ProjectDependency>
     </AllDependencies>
     <RootDirectory>
@@ -248,6 +248,9 @@
           <RelativePath>Inc\gpio.h</RelativePath>
         </VirtualFileSnapshot>
         <VirtualFileSnapshot>
+          <RelativePath>Inc\dma.h</RelativePath>
+        </VirtualFileSnapshot>
+        <VirtualFileSnapshot>
           <RelativePath>Inc\tim.h</RelativePath>
         </VirtualFileSnapshot>
         <VirtualFileSnapshot>
@@ -264,6 +267,9 @@
         </VirtualFileSnapshot>
         <VirtualFileSnapshot>
           <RelativePath>Src\gpio.c</RelativePath>
+        </VirtualFileSnapshot>
+        <VirtualFileSnapshot>
+          <RelativePath>Src\dma.c</RelativePath>
         </VirtualFileSnapshot>
         <VirtualFileSnapshot>
           <RelativePath>Src\tim.c</RelativePath>

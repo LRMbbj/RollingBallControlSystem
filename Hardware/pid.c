@@ -1,9 +1,14 @@
 #include "pid.h"
+#include "host.h"
 
 #include <math.h>
 
 struct PIDCircle pidX, pidY;
 struct PIDCircle* pids[2] = { &pidX, &pidY };
+
+struct DataPack pack[4];
+
+#define USER_PID_DEBUG
 
 #ifdef USER_PID_DEBUG
 #define user_pid_printf(format, ...) HostSendLog(LOG_COLOR_BLACK, format "\r\n", ##__VA_ARGS__)
@@ -42,29 +47,30 @@ s32 limit(s32 val, s32 tgt)
 void PIDInit()
 {
     // pid x环
-    pidX.kp = 0;
-    pidX.ki = 0;
-    pidX.kd = 0;
-    pidX.tgt = 0;
-    pidX.i_band = 0;
-    pidX.i_limit = 0;
-    pidX.sum_limit = 0;
+    pidX.kp = -( pidY.kp = -6); //-8
+    pidX.ki = -( pidY.ki =-0.1 ); // -0.1
+    pidX.kd = -(pidY.kd = -25); // -30
+    pidX.tgt = pidY.tgt = 0;
+    pidX.i_band = pidY.i_band = 20;
+    pidX.i_limit = pidY.i_limit = 200;
+    pidX.sum_limit = pidY.sum_limit = 400;
+    
+    pidX.cur = &posX;
     PIDReset(&pidX);
     
     
    
     // pid y环
-    pidY.kp = 0;
-    pidY.ki = 0;
-    pidY.kd = 0;
-    pidY.tgt = 0;
-    pidY.i_band = 0;
-    pidY.i_limit = 0;
-    pidY.sum_limit = 0;
+    pidY.cur = &posY;
     PIDReset(&pidY);
     
     pids[0] = &pidX;
     pids[1] = &pidY;
+    
+    pack[0].type = DATA_TYPE_S16;
+    pack[1].type = DATA_TYPE_S16;
+    pack[2].type = DATA_TYPE_S16;
+    pack[3].type = DATA_TYPE_S16;
 }
 
 void PIDReset(struct PIDCircle* pid)
@@ -84,7 +90,7 @@ void PIDUpdate(struct PIDCircle* pid)
     
     pid->e = *(pid->cur) - pid->tgt;
     
-    pid->d_out = pid->kd * *(pid->cur) - pid->last_cur; //计算d
+    pid->d_out = pid->kd * (*(pid->cur) - pid->last_cur); //计算d
     pid->last_cur = *(pid->cur);
     
     pid->p_out = pid->kp * pid->e;
@@ -108,12 +114,28 @@ void PIDUpdate(struct PIDCircle* pid)
 void PIDSetState(struct PIDCircle* pid, u8 state)
 {
     pid->isOn = state;
+    if (state == PID_STATE_DEACTIVE) PIDReset(pid);
 }
 
-void TIM6_IRQHandler()
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    for (u8 i = 0; i < PID_NUM; i++)
+    if (htim == &htim6)
     {
-        if (pids[i]->isOn) PIDUpdate(pids[i]);
+        for (u8 i = 0; i < PID_NUM; i++)
+        {
+            if (pids[i]->isOn) 
+            {
+                PIDUpdate(pids[i]);
+                (pids[i]->func)(pids[i]->obj, pids[i]->out);
+            }
+        }
+    
+        pack[0].val.i16 = posX;
+        pack[1].val.i16 = posY;
+        pack[2].val.i16 = pidX.out;
+        pack[3].val.i16 = pidY.out;
+    
+        HostSendData(0xF1, pack, 4);
     }
 }

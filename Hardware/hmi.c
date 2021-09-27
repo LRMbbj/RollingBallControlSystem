@@ -55,7 +55,7 @@ u32 HMIReadInt()
 u8 HMIGetOrder()
 {
     ClearBUF();
-    HAL_UART_Receive_IT(&UART, &hmi.byteBUF, 1);
+    HAL_UART_Receive_IT(hmi.phuart, &hmi.byteBUF, 1);
     while (HMI_DATA_BUF[0] != 'O' || HMI_DATA_BUF[1] != 'D' || *hmi.psize != 3);    
     return HMI_DATA_BUF[2];
 }

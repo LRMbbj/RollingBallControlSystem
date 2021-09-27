@@ -60,6 +60,22 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
 
+enum bool
+{
+    True  = 1,
+    False = 0
+};
+
+struct Waypoint
+{
+    uint8_t x, y;
+    uint8_t stopT;
+};
+
+int32_t posX, posY;
+uint8_t posBUF[4];
+    
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

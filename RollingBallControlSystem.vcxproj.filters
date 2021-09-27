@@ -285,6 +285,9 @@
     <ClCompile Include="Hardware\hmi.c">
       <Filter>Hardware</Filter>
     </ClCompile>
+    <ClCompile Include="Src\dma.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hardware\host.h">
@@ -298,6 +301,9 @@
     </ClInclude>
     <ClInclude Include="Hardware\hmi.h">
       <Filter>Hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\dma.h">
+      <Filter>Header files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

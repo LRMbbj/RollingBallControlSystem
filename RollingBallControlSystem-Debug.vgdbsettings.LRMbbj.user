@@ -13,8 +13,8 @@
     <MemoryWindowPreferences />
     <LiveVariables>
       <LiveVariable>
-        <Expression>HMI_DATA_BUF</Expression>
-        <Type>com.sysprogs.fixed</Type>
+        <Expression>pids</Expression>
+        <Type>com.sysprogs.types.builtin.UInt64</Type>
         <Enabled>true</Enabled>
         <Breakpoint>
           <ComparisonMode>Equals</ComparisonMode>
@@ -25,8 +25,8 @@
         <IsFavorite>false</IsFavorite>
       </LiveVariable>
       <LiveVariable>
-        <Expression>hmi.size</Expression>
-        <Type>com.sysprogs.types.builtin.UInt8</Type>
+        <Expression>pidX.out</Expression>
+        <Type>com.sysprogs.types.builtin.SInt16</Type>
         <Enabled>true</Enabled>
         <Breakpoint>
           <ComparisonMode>Equals</ComparisonMode>

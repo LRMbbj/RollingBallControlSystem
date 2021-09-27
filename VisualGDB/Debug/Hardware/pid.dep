@@ -44,7 +44,8 @@ VisualGDB/Debug/Hardware/pid.o: Hardware/pid.c Hardware/pid.h Inc/tim.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_types.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\lock.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\cdefs.h \
- c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h Hardware/host.h \
+ Inc/main.h
 
 Hardware/pid.h:
 
@@ -145,3 +146,7 @@ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\lock.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\cdefs.h:
 
 c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h:
+
+Hardware/host.h:
+
+Inc/main.h:

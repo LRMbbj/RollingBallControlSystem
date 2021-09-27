@@ -33,9 +33,10 @@ VisualGDB/Debug/Src/main.o: Src/main.c Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h Inc/tim.h \
- Inc/main.h Inc/usart.h Inc/gpio.h Hardware/hmi.h Hardware/host.h \
- Hardware/pid.h c:\sysgcc\arm-eabi\arm-none-eabi\include\math.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h Inc/dma.h \
+ Inc/main.h Inc/tim.h Inc/usart.h Inc/gpio.h Hardware/hmi.h \
+ Hardware/host.h Hardware/pid.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\math.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\reent.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\newlib.h \
@@ -45,7 +46,24 @@ VisualGDB/Debug/Src/main.o: Src/main.c Inc/main.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_types.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\lock.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\cdefs.h \
- c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h Hardware/servo.h
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h Hardware/servo.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\stdlib.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\stdlib.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\alloca.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\stdio.h \
+ c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\9.3.1\include\stdarg.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\types.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\endian.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_endian.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\select.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_sigset.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_timeval.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\timespec.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_timespec.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_pthreadtypes.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\sched.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\types.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\stdio.h
 
 Inc/main.h:
 
@@ -121,9 +139,11 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-Inc/tim.h:
+Inc/dma.h:
 
 Inc/main.h:
+
+Inc/tim.h:
 
 Inc/usart.h:
 
@@ -158,3 +178,37 @@ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\cdefs.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h:
 
 Hardware/servo.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\stdlib.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\stdlib.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\alloca.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\stdio.h:
+
+c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\9.3.1\include\stdarg.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\types.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\endian.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_endian.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\select.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_sigset.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_timeval.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\timespec.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_timespec.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_pthreadtypes.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\sched.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\types.h:
+
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\stdio.h:
